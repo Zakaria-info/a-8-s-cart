@@ -1,12 +1,24 @@
 "use client";
+import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
 import Link from "next/link";
+import { FaGoogle } from "react-icons/fa";
 // import { authClient } from "@/lib/auth-client"; // BetterAuth client import
 
 const Navbar = () => {
   // Replace this null with your actual session logic later
   // const { data: session } = authClient.useSession();
-  const session = null;
+
+  const { data: session } = authClient.useSession();
+  const user = session?.user;
+  console.log(user, "user")
+
+  const handleGoogleSignIn = async () => {
+    const data = await authClient.signIn.social({
+    provider: "google",
+  });
+  console.log(data, "data")
+  }
 
   const navLinks = (
     <>
@@ -68,30 +80,21 @@ const Navbar = () => {
 
         <div className="navbar-end gap-3">
           {session ? (
-            <div className="dropdown dropdown-end">
-              <div
-                tabIndex={0}
-                role="button"
-                className="btn btn-ghost btn-circle avatar border border-orange-200"
-              >
-                <div className="w-10 rounded-full">
+            <div className="flex justify-between items-center gap-3">
+              
+                <div className="">
                   <Image
                     alt="User Avatar"
+                    width={50}
+                    height={50}
                     src={
-                      session.user.image ||
+                      user?.image ||
                       "https://ui-avatars.com/api/?name=User"
                     }
                   />
                 </div>
-              </div>
-              <ul
-                tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-              >
-                <li>
-                  <button className="text-error font-semibold">Logout</button>
-                </li>
-              </ul>
+              
+              <button className="text-error font-semibold" onClick={async()=> await authClient.signOut()}>Logout</button>
             </div>
           ) : (
             <div className="flex items-center gap-2">
@@ -101,6 +104,7 @@ const Navbar = () => {
               <Link href="/register" className="btn btn-primary btn-sm px-6">
                 Register
               </Link>
+              <button className="btn border-blue-500 text-blue-500" onClick={handleGoogleSignIn}><FaGoogle /> LogIn with google</button>
             </div>
           )}
         </div>
