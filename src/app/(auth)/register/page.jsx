@@ -14,7 +14,8 @@ const RegisterPage = () => {
 
 
   const handleRegister = (data) => {
-    console.log(data, "data");
+    const { name, photoUrl, email, password } = data;
+    console.log(name, photoUrl, email, password, "data");
   };
 
   return (
@@ -25,6 +26,30 @@ const RegisterPage = () => {
         </h2>
 
         <form className="space-y-4" onSubmit={handleSubmit(handleRegister)}>
+          <fieldset className="fieldset">
+            <legend className="fieldset-legend">Name</legend>
+            <input
+              
+              type="text"
+              className="input"
+              placeholder="Type here name"
+              {...register("name", { required: "Name is required" })}
+            />
+            {errors.name && (<p className="text-red-500 mt-1">{errors.name.message}</p>
+            )}
+          </fieldset>
+          <fieldset className="fieldset">
+            <legend className="fieldset-legend">Photo URL</legend>
+            <input
+              
+              type="text"
+              className="input"
+              placeholder="Type here photo URL"
+              {...register("photoUrl", { required: "Photo URL is required" })}
+            />
+            {errors.photoUrl && (<p className="text-red-500 mt-1">{errors.photoUrl.message}</p>
+            )}
+          </fieldset>
           <fieldset className="fieldset">
             <legend className="fieldset-legend">Email</legend>
             <input
