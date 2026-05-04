@@ -68,7 +68,7 @@ const Navbar = () => {
           {/* Brand Logo */}
           <Link
             href="/"
-            className="btn btn-ghost text-xl font-bold text-orange-500 uppercase tracking-tighter"
+            className="btn btn-ghost text-xl font-bold text-orange-500 uppercase tracking-tighter "
           >
             Summer<span className="text-blue-500">Cart</span>
           </Link>

@@ -16,10 +16,10 @@ const HeroSection = () => {
           <div className="flex items-center gap-2 bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm text-sm font-semibold">
             <span>Summer Collection 2026</span>
           </div>
-          <h2 className="text-5xl md:text-7xl font-extrabold tracking-tighter leading-none">
-            SUMMER <span className="text-rose-600 drop-shadow-sm">SALE</span>
+          <h2 className="text-5xl md:text-7xl font-extrabold tracking-tighter leading-none animate__animated animate__bounce animate__infinite animate__slower">
+            SUMMER <span className="text-rose-600 drop-shadow-sm animate__animated animate__bounce animate__infinite animate__delay-1s">SALE</span>
           </h2>
-          <p className="text-5xl md:text-7xl font-black text-rose-600 drop-shadow-md animate__animated animate__bounce">
+          <p className="text-5xl md:text-7xl font-black text-rose-600 drop-shadow-md animate__animated animate__bounce animate__infinite animate__delay-2s">
             50% OFF
           </p>
           <p className="text-sm md:text-lg opacity-90 max-w-sm pt-2">
