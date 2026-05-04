@@ -1,7 +1,14 @@
+import HeroSection from "@/components/homepage/HeroSection";
+import PopularProducts from "@/components/homepage/PopularProducts";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <h2>Welcome to the Home Page</h2>
+    <>
+      <HeroSection />
+      <PopularProducts />
+     
+      <h2>Welcome to the Home Page</h2>
+    </>
   );
 }
