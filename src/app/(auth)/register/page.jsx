@@ -2,10 +2,12 @@
 
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { useForm } from "react-hook-form";
 
 const RegisterPage = () => {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -28,6 +30,7 @@ const RegisterPage = () => {
       alert(error.message);
     } else {
       alert("SignUP successful!");
+      router.push("/login");
     }
   };
 

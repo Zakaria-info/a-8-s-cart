@@ -82,11 +82,13 @@ const Navbar = () => {
           {session ? (
             <div className="flex justify-between items-center gap-3">
               
-                <div className="">
+                <div className="flex items-center gap-2">
+                  <h2>Hello, {user?.name}</h2>
                   <Image
                     alt="User Avatar"
                     width={50}
                     height={50}
+                    unoptimized
                     src={
                       user?.image ||
                       "https://ui-avatars.com/api/?name=User"
