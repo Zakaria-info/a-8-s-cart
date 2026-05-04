@@ -1,21 +1,34 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
 import React from "react";
 import { useForm } from "react-hook-form";
 
 const RegisterPage = () => {
-
-     const {
+  const {
     register,
-    handleSubmit, formState: { errors }
-  } = useForm()
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-
-
-  const handleRegister = (data) => {
+  const handleRegister = async (data) => {
     const { name, photoUrl, email, password } = data;
-    console.log(name, photoUrl, email, password, "data");
+
+    const { data: res, error } = await authClient.signUp.email({
+      name,
+      email,
+      password,
+      image: photoUrl,
+      callbackURL: "/",
+    });
+    console.log(res, error);
+
+    if (error) {
+      alert(error.message);
+    } else {
+      alert("SignUP successful!");
+    }
   };
 
   return (
@@ -29,54 +42,55 @@ const RegisterPage = () => {
           <fieldset className="fieldset">
             <legend className="fieldset-legend">Name</legend>
             <input
-              
               type="text"
               className="input"
               placeholder="Type here name"
               {...register("name", { required: "Name is required" })}
             />
-            {errors.name && (<p className="text-red-500 mt-1">{errors.name.message}</p>
+            {errors.name && (
+              <p className="text-red-500 mt-1">{errors.name.message}</p>
             )}
           </fieldset>
           <fieldset className="fieldset">
             <legend className="fieldset-legend">Photo URL</legend>
             <input
-              
               type="text"
               className="input"
               placeholder="Type here photo URL"
               {...register("photoUrl", { required: "Photo URL is required" })}
             />
-            {errors.photoUrl && (<p className="text-red-500 mt-1">{errors.photoUrl.message}</p>
+            {errors.photoUrl && (
+              <p className="text-red-500 mt-1">{errors.photoUrl.message}</p>
             )}
           </fieldset>
           <fieldset className="fieldset">
             <legend className="fieldset-legend">Email</legend>
             <input
-              
               type="email"
               className="input"
               placeholder="Type here email"
               {...register("email", { required: "Email is required" })}
             />
-            {errors.email && (<p className="text-red-500 mt-1">{errors.email.message}</p>
+            {errors.email && (
+              <p className="text-red-500 mt-1">{errors.email.message}</p>
             )}
           </fieldset>
           <fieldset className="fieldset">
             <legend className="fieldset-legend">Password</legend>
             <input
-              
               type="password"
               className="input"
               placeholder="Type here password"
               {...register("password", { required: "Password is required" })}
             />
-            {errors.password && (<p className="text-red-500 mt-1">{errors.password.message}</p>
+            {errors.password && (
+              <p className="text-red-500 mt-1">{errors.password.message}</p>
             )}
           </fieldset>
-          <button className="btn w-full bg-orange-400 text-white">Register</button>
+          <button className="btn w-full bg-orange-400 text-white">
+            Register
+          </button>
         </form>
-        
       </div>
     </div>
   );
