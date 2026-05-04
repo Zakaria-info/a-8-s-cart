@@ -4,15 +4,17 @@ import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useSearchParams, useRouter } from "next/navigation";
 
 const LoginPage = () => {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const from = searchParams.get('from') || '/';
 
-     const {
+  const {
     register,
     handleSubmit, formState: { errors }
   } = useForm()
-
-
 
   const handleLogin = async (data) => {
     console.log(data, "data");
@@ -22,8 +24,12 @@ const LoginPage = () => {
       email,
       password,
       rememberMe: true,
-      callbackURL: "/",
+      callbackURL: from,
     });
+
+    if (res) {
+      router.push(from);
+    }
   };
 
   return (

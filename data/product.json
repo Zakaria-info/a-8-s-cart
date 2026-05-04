@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Summer Hat",
+    "price": 25,
+    "image": "/images/hat.jpg",
+    "description": "A stylish summer hat to protect from the sun."
+  },
+  {
+    "id": 2,
+    "name": "Sunglasses",
+    "price": 50,
+    "image": "/images/sunglasses.jpg",
+    "description": "Cool sunglasses for sunny days."
+  },
+  {
+    "id": 3,
+    "name": "Beach Towel",
+    "price": 20,
+    "image": "/images/towel.jpg",
+    "description": "Soft and absorbent beach towel."
+  },
+  {
+    "id": 4,
+    "name": "Swim Trunks",
+    "price": 30,
+    "image": "/images/swim.jpg",
+    "description": "Comfortable swim trunks for the pool."
+  }
+]
