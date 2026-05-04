@@ -6,6 +6,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useSearchParams, useRouter } from "next/navigation";
 
+export const dynamic = 'force-dynamic';
+
 const LoginPage = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
