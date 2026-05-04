@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": "UV Protection Sunglasses",
+    "brand": "SunShade",
+    "price": 15,
+    "rating": 4.7,
+    "stock": 10,
+    "description": "Stylish UV protection sunglasses perfect for summer outings.",
+    "image": "https://picsum.photos/seed/sunglasses/400/400",
+    "category": "Accessories"
+  },
+  {
+    "id": 2,
+    "name": "Cooling Summer T-Shirt",
+    "brand": "CoolWear",
+    "price": 12,
+    "rating": 4.5,
+    "stock": 25,
+    "description": "Lightweight and breathable t-shirt designed for hot weather comfort.",
+    "image": "https://picsum.photos/seed/tshirt/400/400",
+    "category": "Clothing"
+  },
+  {
+    "id": 3,
+    "name": "Portable Mini Fan",
+    "brand": "BreezeTech",
+    "price": 20,
+    "rating": 4.6,
+    "stock": 15,
+    "description": "Rechargeable handheld fan ideal for travel and outdoor use.",
+    "image": "https://picsum.photos/seed/fan/400/400",
+    "category": "Electronics"
+  },
+  {
+    "id": 4,
+    "name": "Insulated Water Bottle",
+    "brand": "HydroMax",
+    "price": 18,
+    "rating": 4.8,
+    "stock": 30,
+    "description": "Keeps drinks cold for up to 24 hours, perfect for summer hydration.",
+    "image": "https://picsum.photos/seed/bottle/400/400",
+    "category": "Accessories"
+  },
+  {
+    "id": 5,
+    "name": "Beach Sandals",
+    "brand": "StepEasy",
+    "price": 10,
+    "rating": 4.4,
+    "stock": 20,
+    "description": "Comfortable and durable sandals for beach and casual wear.",
+    "image": "https://picsum.photos/seed/sandals/400/400",
+    "category": "Footwear"
+  },
+  {
+    "id": 6,
+    "name": "SPF 50 Sunscreen Lotion",
+    "brand": "SunGuard",
+    "price": 14,
+    "rating": 4.9,
+    "stock": 18,
+    "description": "High protection sunscreen to shield your skin from harmful UV rays.",
+    "image": "https://picsum.photos/seed/sunscreen/400/400",
+    "category": "Skincare"
+  }
+]
